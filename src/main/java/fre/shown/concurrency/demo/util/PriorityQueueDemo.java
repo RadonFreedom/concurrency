@@ -18,7 +18,7 @@ import java.util.concurrent.*;
 @Demo
 public class PriorityQueueDemo {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
     /**

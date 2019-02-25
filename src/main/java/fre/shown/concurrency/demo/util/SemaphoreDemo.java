@@ -20,7 +20,7 @@ import java.util.concurrent.*;
 
 @Demo
 public class SemaphoreDemo {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private static final int PERMIT_NUM = 2;
     private static final int TASK_NUM = 5;
 

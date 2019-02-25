@@ -8,10 +8,12 @@ import org.slf4j.LoggerFactory;
 /**
  * 示例线程的阻塞(block)和中断(interrupt)。
  * <p/>
- * 线程当获取其他资源时无法获取便阻塞，例如尝试获取一个锁。
- * 一个线程被阻塞通常意味着被挂起，并被设置为某个状态。
- * 只有能抛出{@link InterruptedException}的方法才会被阻塞。<tr/>
- * 线程A可以被线程B通过引用线程A的引用调用{@link Thread#interrupt() A.interrupt()}来中断线程A。
+ * 线程当获取其他资源时无法获取便阻塞，按照是否可以被中断，阻塞分为可中断阻塞与不可中断阻塞。<TR/>
+ * 只有能抛出{@link InterruptedException}的阻塞方法才可以被中断，
+ * 这些方法会在被执行时不断检查当前线程的中断标志，
+ * 如果为true，将抛出{@link InterruptedException}并将中断标志设置为false。<tr/>
+ * 线程A可以被线程B调用{@link Thread#interrupt() A.interrupt()}来设置线程A的中断标志为true，
+ * A是否真正意义上被“中断”，还需要看线程A栈顶的方法能否抛出{@link InterruptedException}。
  *
  * @author Radon Freedom
  * created at 2019.02.21 12:27
@@ -35,6 +37,7 @@ public class BlockAndInterruptDemo {
             } catch (InterruptedException e) {
                 logger.debug("线程" + Thread.currentThread().getName() + "已经被中断");
                 e.printStackTrace();
+                //重新设置当前线程的中断标志
                 Thread.currentThread().interrupt();
             }
         }, "t1");
@@ -43,6 +46,7 @@ public class BlockAndInterruptDemo {
         logger.debug("等待" + t1.getName() + "启动");
         Thread.sleep(10);
         logger.debug("即将中断线程" + t1.getName());
+        //单纯的设置t1线程的中断标志
         t1.interrupt();
     }
 }

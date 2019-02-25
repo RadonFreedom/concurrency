@@ -27,7 +27,7 @@ public class CountDownLatchDemo {
         final CountDownLatch latch = new CountDownLatch(TASK_NUM);
         final Thread[] workers = new Thread[TASK_NUM];
         final Thread[] proceedingWorkers = new Thread[TASK_NUM];
-        Logger logger = LoggerFactory.getLogger(this.getClass());
+        final Logger logger = LoggerFactory.getLogger(this.getClass());
 
         //第一批工作线程创建
         for (int i = 0; i < TASK_NUM; i++) {
