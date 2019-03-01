@@ -19,7 +19,7 @@ import java.util.concurrent.*;
 @Demo
 public class BarrierDemo {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private static final int TASK_NUM = 5;
 
 
