@@ -1,7 +1,7 @@
-package fre.shown.concurrency.demo.executor.timelimit;
+package fre.shown.concurrency.executor.timelimit;
 
-import fre.shown.concurrency.demo.Demo;
-import fre.shown.concurrency.demo.NeedTimeTask;
+import fre.shown.concurrency.NeedTimeTask;
+import fre.shown.concurrency.Demo;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package fre.shown.concurrency.demo.cas;
+package fre.shown.concurrency.cas;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,8 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * 使用{@link AtomicReference}来构造原子操作的整数范围
+ * 使用{@link AtomicReference}来构造原子操作的整数范围。
+ * 使用这个Atomic类能够实现多个对象的CAS操作。
  *
  * @author Radon Freedom
  * created at 2019.03.01 7:42

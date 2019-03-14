@@ -1,6 +1,6 @@
-package fre.shown.concurrency.demo.cancel;
+package fre.shown.concurrency.cancel;
 
-import fre.shown.concurrency.demo.Demo;
+import fre.shown.concurrency.Demo;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

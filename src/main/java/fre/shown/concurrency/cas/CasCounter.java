@@ -1,4 +1,4 @@
-package fre.shown.concurrency.demo.cas;
+package fre.shown.concurrency.cas;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -1,4 +1,4 @@
-package fre.shown.concurrency.demo;
+package fre.shown.concurrency;
 
 import java.util.concurrent.Callable;
 
